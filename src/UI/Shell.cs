@@ -77,6 +77,8 @@ namespace AITool
 
         private async void Shell_Load(object sender, EventArgs e)
         {
+            //ClsImageQueueItem qi = new ClsImageQueueItem("C:\\Downloads\\TestVehicleImage.jpg",0);
+            //qi.CopyFileTo("C:\\TEST\\blah.jpg");
 
             //ClsDoodsRequest cdr = new ClsDoodsRequest();
 
@@ -2432,14 +2434,14 @@ namespace AITool
 
                         string cn = cs;
 
-                        if (cn.StartsWith("ai", StringComparison.OrdinalIgnoreCase))
-                        {
-                            cn = Name.Substring(2).TrimStart(@"_-".ToCharArray()).Trim();  //if using dupe cam that may start with AICAMNAME or AI_CAMNAME
-                            string maskfile = AITOOL.GetMaskFile(cn);
-                            string newfile = AITOOL.GetMaskFile(cs);
-                            if (File.Exists(maskfile) && !File.Exists(newfile))
-                                File.Move(maskfile, newfile);
-                        }
+                        //if (cn.StartsWith("ai", StringComparison.OrdinalIgnoreCase))
+                        //{
+                        //    cn = Name.Substring(2).TrimStart(@"_-".ToCharArray()).Trim();  //if using dupe cam that may start with AICAMNAME or AI_CAMNAME
+                        //    string maskfile = AITOOL.GetMaskFile(cn);
+                        //    string newfile = AITOOL.GetMaskFile(cs);
+                        //    if (File.Exists(maskfile) && !File.Exists(newfile))
+                        //        File.Move(maskfile, newfile);
+                        //}
 
                         if (GetCamera(cn, false) == null)
                         {
@@ -2621,7 +2623,7 @@ namespace AITool
 
                                         Log($"Updating camera '{cam.Name}' with settings from '{icam.Name}'...");
 
-                                        icam.BICamName = cam.BICamName;
+                                        //icam.BICamName = cam.BICamName;
 
 
                                         if (frm.cb_apply_confidence_limits.Checked)
@@ -2871,7 +2873,7 @@ namespace AITool
 
             if (noneg)
             {
-                MessageBox.Show("Please note that the Telegram Chat ID **may** need to start with a negative sign. -1234567890", "Telegram Chat ID format", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Please note that the Telegram Chat ID **may** need to start with a negative sign. -1234567890", "Telegram Chat ID format", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
